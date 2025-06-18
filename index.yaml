@@ -3,7 +3,7 @@ entries:
   romm:
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2025-06-18T21:48:52.782798933Z"
+    created: "2025-06-18T22:03:28.207846122Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -17,7 +17,7 @@ entries:
       version: ~15.2.0
     description: RomM (Rom Manager) is a web based retro roms manager integrated with
       IGDB.
-    digest: 88cce515ac1f97e81ed917107c92ee6cb4f6b14524975b2571bb8c8118a5210c
+    digest: 0cfbc6adc537f406e5f41c876bbf9e938722feb509fcf1131d618113d8b2d8d1
     home: https://zurdi15.github.io/romm/
     icon: https://raw.githubusercontent.com/CrystalNET-org/helm-romm/main/chart/icon.png
     kubeVersion: '>=1.22.0-0'
@@ -32,4 +32,4 @@ entries:
     urls:
     - romm-0.3.1.tgz
     version: 0.3.1
-generated: "2025-06-18T21:48:52.773610885Z"
+generated: "2025-06-18T22:03:28.197190881Z"
