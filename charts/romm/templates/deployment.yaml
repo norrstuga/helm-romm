@@ -160,12 +160,12 @@ spec:
             httpGet:
               path: /
               port: http
-              timeoutSeconds: 300
+            timeoutSeconds: 300
           readinessProbe:
             httpGet:
               path: /
               port: http
-              timeoutSeconds: 300
+            timeoutSeconds: 300
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
