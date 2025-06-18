@@ -178,7 +178,7 @@ spec:
             - name: temp
               mountPath: /tmp/
             - name: romm-config
-              mountPath: /romm/config.yml
+              mountPath: /romm/config/config.yml
               subPath: config.yml
       {{- with .Values.nodeSelector }}
       nodeSelector:
