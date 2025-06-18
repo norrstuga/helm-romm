@@ -158,13 +158,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | `romm.config.scheduled_tasks.switch_titledb_update.enabled` |  | `true` |
 | `romm.config.steamgriddb_api.api_key` | work in progress and not fully implemented yet | `"CHANGEME_STEAMGRIDDB_API_KEY"` |
 | `romm.settings.exclude.platforms` | Exclude platforms to be scanned | `["romm"]` |
-| `romm.settings.exclude.roms` | Exclude roms or parts of roms to be scanned | See [values.yaml](./values.yaml) |
+| `romm.settings.exclude.roms` | Exclude roms or parts of roms to be scanned | See [values.yaml](values.yaml) |
 | `romm.settings.exclude.roms.multi_file.names` | Exclude matched 'folder' (RomM identifies folders as multi file games) names to be scanned | `["my_multi_file_game","DLC"]` |
 | `romm.settings.exclude.roms.multi_file.parts.extensions` | Exclude all files with certain extensions to be scanned from multi file roms | `["txt"]` |
 | `romm.settings.exclude.roms.multi_file.parts.names` | Exclude matched file names to be scanned from multi file roms    Keep in mind that RomM doesn't scan folders inside multi files games,    so there is no need to exclude folders from inside of multi files games. | `["data.xml"]` |
 | `romm.settings.exclude.roms.single_file.extensions` | Exclude all files with certain extensions to be scanned | `["xml"]` |
 | `romm.settings.exclude.roms.single_file.names` | Exclude matched file names to be scanned | `["info.txt"]` |
-| `romm.settings.system.platforms` | use to overwrite romm's expected folder names for platforms with your own custom names | See [values.yaml](./values.yaml) |
+| `romm.settings.system.platforms` | use to overwrite romm's expected folder names for platforms with your own custom names | See [values.yaml](values.yaml) |
 
 ### Security parameters
 
@@ -228,7 +228,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `mariadb.auth.username` | username to connect to the database | `"romm"` |
 | `mariadb.enabled` | provision an instance of the mariadb sub-chart | `true` |
 | `mariadb.primary.persistence.enabled` | enable to not loose your database contents on updates | `false` |
-| `romm.config.database.mariadb` | only needed when type is mariadb and mariadb.enabled is set to false    meaning you would use an external already existing mariadb instance | See [values.yaml](./values.yaml) |
+| `romm.config.database.mariadb` | only needed when type is mariadb and mariadb.enabled is set to false    meaning you would use an external already existing mariadb instance | See [values.yaml](values.yaml) |
 | `romm.config.database.mariadb.existing_secret` | use an pre-existing secret to provide credentials    it should contain the keys mysql-user and mysql-pass | `nil` |
 | `romm.config.database.mariadb.host` | hostname where your external mariadb is reachable | `"localhost"` |
 | `romm.config.database.mariadb.pass` | mariadb password to use for our connection | `"password"` |
@@ -250,7 +250,7 @@ The command removes all the Kubernetes components associated with the chart and 
 
 | Key | Description | Default |
 |-----|-------------|---------|
-| `mediaVolume` | The list of additional volumes that will be mounted inside romm pod, this one to `/romm/library`. | See [values.yaml](./values.yaml) |
+| `mediaVolume` | The list of additional volumes that will be mounted inside romm pod, this one to `/romm/library`. | See [values.yaml](values.yaml) |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
