@@ -34,9 +34,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.romm.port }}
               protocol: TCP
           env:
+          - name: ROMM_PORT
+            value: {{ .Values.romm.port | quote }}
           {{- if and (.Values.redis.enabled) (.Values.romm.config.auth.enabled) -}}
           - name: ROMM_AUTH_ENABLED
             value: "true"

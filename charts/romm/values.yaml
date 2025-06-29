@@ -51,7 +51,7 @@ securityContext:
     drop:
     - ALL
   # -- mount / as readonly, writeable directorys are explicitely mounted
-  readOnlyRootFilesystem: true
+  readOnlyRootFilesystem: false
   # -- Controls whether a process can gain more privileges than its parent process
   allowPrivilegeEscalation: false
 
@@ -183,6 +183,7 @@ persistence:
           storage: 256Mi
 
 romm:
+  port: 8080
   config:
     auth:
       # -- enable romm's integrated authentication mechanics (this requires redis to be available)
