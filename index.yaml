@@ -3,7 +3,41 @@ entries:
   romm:
   - apiVersion: v2
     appVersion: 3.10.2
-    created: "2025-06-29T21:15:59.504935279Z"
+    created: "2025-07-04T23:16:36.68832977Z"
+    dependencies:
+    - alias: redis
+      condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~18
+    - alias: mariadb
+      condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: ~15
+    description: RomM (Rom Manager) is a web based retro roms manager integrated with
+      IGDB.
+    digest: dabfb098e4526e33229c683294d98d44ed6cfe0a38a68cef400b569de79f10e2
+    home: https://norrstuga.github.io/romm/
+    icon: https://raw.githubusercontent.com/CrystalNET-org/helm-romm/main/chart/icon.png
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: h@xx0r.eu
+      name: psych0d0g
+    - email: romm@norrstuga.se
+      name: zshel
+    name: romm
+    sources:
+    - https://github.com/rommapp/romm
+    - https://github.com/CrystalNET-org/helm-romm
+    - https://github.com/norrstuga/helm-romm
+    type: application
+    urls:
+    - romm-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
+    appVersion: 3.10.2
+    created: "2025-07-04T23:16:36.678739575Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -37,7 +71,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2025-06-29T21:15:59.495752635Z"
+    created: "2025-07-04T23:16:36.669450507Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -66,4 +100,4 @@ entries:
     urls:
     - romm-0.3.1.tgz
     version: 0.3.1
-generated: "2025-06-29T21:15:59.486312234Z"
+generated: "2025-07-04T23:16:36.660189173Z"
