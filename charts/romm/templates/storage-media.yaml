@@ -9,13 +9,16 @@ metadata:
     {{- with $.Values.global.commonLabels }}{{ toYaml . | nindent 4 }}{{ end }}
 spec:
   storageClassName: {{ .Values.mediaVolume.volumeSpec.storageClassName | quote }}
+  {{- if not .Values.mediaVolume.pvcOnly -}}
   selector:
     matchLabels:
       {{- include "common.labels.matchLabels" $ | nindent 6 }}
       romm-volume: {{ .Values.mediaVolume.name }}
+  {{- end }}
   accessModes: {{ toYaml .Values.mediaVolume.volumeSpec.accessModes | nindent 4 }}
   resources:
     requests: {{ toYaml .Values.mediaVolume.volumeSpec.capacity | nindent 6 }}
+{{- if not .Values.mediaVolume.pvcOnly -}}
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -26,4 +29,5 @@ metadata:
     {{- with $.Values.global.commonLabels }}{{ toYaml . | nindent 4 }}{{ end }}
     romm-volume: {{ .Values.mediaVolume.name }}
 spec: {{ toYaml .Values.mediaVolume.volumeSpec | nindent 2 }}
+{{- end }}
 {{- end }}

@@ -290,6 +290,8 @@ romm:
 # @default -- See [values.yaml](./values.yaml)
 mediaVolume:
   enabled: false
+  # Only create a persistent volume claim for the media volume, not a persistent volume.
+  pvcOnly: false
 #   name: library # this volume will be mounted into `/romm/library`
 #   readOnly: false # is this volume readonly ? (optional, default true)
 #   volumeSpec: # see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumespec-v1-core
