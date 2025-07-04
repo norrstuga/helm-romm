@@ -163,6 +163,8 @@ spec:
           volumeMounts:
             - name: resources
               mountPath: /romm/resources
+            - name: assets
+              mountPath: /romm/assets
             - name: logs
               mountPath: /romm/logs
             - name: database
@@ -197,6 +199,13 @@ spec:
           {{- if .Values.persistence.resources.enabled }}
           persistentVolumeClaim:
             claimName: {{ include "romm.fullname" . }}-resources
+          {{- else }}
+          emptyDir: { }
+          {{- end }}
+        - name: assets
+          {{- if .Values.persistence.assets.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "romm.fullname" . }}-assets
           {{- else }}
           emptyDir: { }
           {{- end }}

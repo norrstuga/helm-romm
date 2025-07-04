@@ -157,6 +157,18 @@ persistence:
       resources:
         requests:
           storage: 2Gi
+  assets:
+    # -- Enable game saves persistence using `PVC`. If false, use emptyDir
+    enabled: true
+    # Claims that pods are allowed to reference (see
+    # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#persistentvolumeclaim-v1-core
+    # for structural reference)
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 2Gi
   database:
     # -- Enable roms database persistence using `PVC`. only needed when database backend is sqlite
     enabled: true
