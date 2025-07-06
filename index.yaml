@@ -3,7 +3,40 @@ entries:
   romm:
   - apiVersion: v2
     appVersion: 3.10.2
-    created: "2025-07-06T21:33:42.264487431Z"
+    created: "2025-07-06T22:01:04.88580529Z"
+    dependencies:
+    - alias: redis
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: ~18
+    - alias: mariadb
+      condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: ~15
+    description: RomM (Rom Manager) is a web based retro roms manager integrated with
+      IGDB.
+    digest: 7e73487a4100d4137e35e2101ae493ba2daa568e5c8babf7be72fb093a6116fc
+    home: https://norrstuga.github.io/romm/
+    icon: https://raw.githubusercontent.com/CrystalNET-org/helm-romm/main/chart/icon.png
+    kubeVersion: '>=1.22.0-0'
+    maintainers:
+    - email: h@xx0r.eu
+      name: psych0d0g
+    - email: romm@norrstuga.se
+      name: zshel
+    name: romm
+    sources:
+    - https://github.com/rommapp/romm
+    - https://github.com/CrystalNET-org/helm-romm
+    - https://github.com/norrstuga/helm-romm
+    type: application
+    urls:
+    - romm-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v2
+    appVersion: 3.10.2
+    created: "2025-07-06T22:01:04.876775429Z"
     dependencies:
     - alias: redis
       name: redis
@@ -36,7 +69,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 3.10.2
-    created: "2025-07-06T21:33:42.255499401Z"
+    created: "2025-07-06T22:01:04.867757755Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -70,7 +103,7 @@ entries:
     version: 0.4.3
   - apiVersion: v2
     appVersion: 3.10.2
-    created: "2025-07-06T21:33:42.246523662Z"
+    created: "2025-07-06T22:01:04.85881781Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -104,7 +137,7 @@ entries:
     version: 0.4.2
   - apiVersion: v2
     appVersion: 3.10.2
-    created: "2025-07-06T21:33:42.236927737Z"
+    created: "2025-07-06T22:01:04.847434438Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -138,7 +171,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 2.3.1
-    created: "2025-07-06T21:33:42.227054661Z"
+    created: "2025-07-06T22:01:04.837582077Z"
     dependencies:
     - alias: redis
       condition: redis.enabled
@@ -167,4 +200,4 @@ entries:
     urls:
     - romm-0.3.1.tgz
     version: 0.3.1
-generated: "2025-07-06T21:33:42.217559497Z"
+generated: "2025-07-06T22:01:04.828313353Z"
