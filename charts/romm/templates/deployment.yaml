@@ -44,7 +44,6 @@ spec:
               secretKeyRef:
                 name: romm-shared-secret
                 key: auth-secret
-          {{- end }}
           {{- /*
           # Database configuration
           */}}
