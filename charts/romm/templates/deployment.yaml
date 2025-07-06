@@ -39,11 +39,6 @@ spec:
           env:
           - name: ROMM_PORT
             value: {{ .Values.romm.port | quote }}
-          - name: ROMM_AUTH_SECRET_KEY
-            valueFrom:
-              secretKeyRef:
-                name: romm-shared-secret
-                key: auth-secret
           {{- /*
           # Database configuration
           */}}

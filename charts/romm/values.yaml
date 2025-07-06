@@ -109,8 +109,6 @@ affinity: {}
 # [[ref]](https://github.com/bitnami/charts/tree/main/bitnami/redis)
 # -- @default -- See https://github.com/bitnami/charts/tree/master/bitnami/redis#parameters for more options
 redis:
-  # -- provision an instance of the redis sub-chart
-  enabled: true
   # -- default port for redis to listen on
   redisPort: 6379
   # -- can be set to replication to spawn a full redis cluster with 3 nodes instead
@@ -197,16 +195,6 @@ persistence:
 romm:
   port: 8080
   config:
-    auth:
-      # -- enable romm's integrated authentication mechanics (this requires redis to be available)
-      enabled: false
-      # -- default username for the admin user
-      username: admin
-      # -- default password for the admin user
-      password: admin
-      # -- use an pre-existing secret to provide credentials
-      #    it should contain the keys romm-user and romm-pass
-      existing_secret:
     filesystem_watcher:
       # -- enable inotify filesystem watcher mechanics to automatically add new roms and pick up changes as they happen
       enabled: true
