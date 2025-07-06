@@ -244,7 +244,6 @@ The command removes all the Kubernetes components associated with the chart and 
 | `redis.architecture` | can be set to replication to spawn a full redis cluster with 3 nodes instead | `"standalone"` |
 | `redis.auth.enabled` | enable redis authentication mode | `true` |
 | `redis.auth.password` | password that gets used for the connection between romm and redis | `"changeme"` |
-| `redis.enabled` | provision an instance of the redis sub-chart | `true` |
 | `redis.redisPort` | default port for redis to listen on | `6379` |
 ### Other parameters
 

@@ -5,7 +5,7 @@ name: romm
 type: application
 home: https://norrstuga.github.io/romm/
 icon: https://raw.githubusercontent.com/CrystalNET-org/helm-romm/main/chart/icon.png
-version: 0.4.3
+version: 0.5.0
 # renovate: image=zurdi15/romm
 appVersion: "3.10.2"
 kubeVersion: ">=1.22.0-0"
@@ -23,7 +23,6 @@ dependencies:
     version: ~18
     repository: https://charts.bitnami.com/bitnami
     alias: redis
-    condition: redis.enabled
   - name: mariadb
     version: ~15
     repository: https://charts.bitnami.com/bitnami

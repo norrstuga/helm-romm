@@ -39,26 +39,6 @@ spec:
           env:
           - name: ROMM_PORT
             value: {{ .Values.romm.port | quote }}
-          {{- if and (.Values.redis.enabled) (.Values.romm.config.auth.enabled) -}}
-          - name: ROMM_AUTH_ENABLED
-            value: "true"
-          {{- if .Values.romm.config.auth.existing_secret -}}
-          - name: ROMM_AUTH_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: romm-credentials
-                key: romm-user
-          - name: ROMM_AUTH_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: romm-credentials
-                key: romm-pass
-          {{- else -}}
-          - name: ROMM_AUTH_USERNAME
-            value: {{ .Values.romm.config.auth.username }}
-          - name: ROMM_AUTH_PASSWORD
-            value: {{ .Values.romm.config.auth.password }}
-          {{- end -}}
           - name: ROMM_AUTH_SECRET_KEY
             valueFrom:
               secretKeyRef:
@@ -107,9 +87,6 @@ spec:
           {{- /*
           # Redis enabling if desired
           */}}
-          {{- if .Values.redis.enabled }}
-          - name: ENABLE_EXPERIMENTAL_REDIS
-            value: "true"
           - name: REDIS_HOST
             value: {{ printf "%s-redis-headless" .Release.Name | quote }}
           - name: REDIS_PORT
@@ -120,7 +97,6 @@ spec:
               secretKeyRef:
                 name: romm-redis
                 key: redis-password
-          {{- end }}
           {{- end }}
           {{- /*
           # END Redis enabling if desired
